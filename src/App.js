@@ -1,45 +1,43 @@
-import User from './User'
 function App() {
-
-  let users = [
-    {
-      id: 25,
-      name: 'john',
-      age: 25,
-      place: 'Hyderabad'
-    },
-    {
-      id: 26,
-      name: 'foo',
-      age: 27,
-      place: 'Bangalore'
-    },
-    {
-      id: 27,
-      name: 'ram',
-      age: 28,
-      place: 'Bangalore'
-    }
-  ]
-
   return (
-    <>
-      {
-        users.map(
-          (u) => {
-            return <User key={u.id} id={u.id} name={u.name} age={u.age} place={u.place} />
-          }
-        )
+    <div>
+      <h1>This is heading</h1>
+      <p>This is paragraph</p>
+    </div>
+  )
 
-      }
+}
 
-    </>
+/*Using Arrow function
+
+let App = () =>
+
+  <div>
+    <h1>This is heading</h1>
+    <p>This is paragraph</p>
+  </div>
+
+*/
 
 
+/*Using Anonymous function
 
-
-
+let App = function () {
+  return (
+    <div>
+      <h1>This is heading</h1>
+      <p>This is paragraph</p>
+    </div>
   )
 }
+*/
+
+
+
+
+
+
+
+
 
 export default App
