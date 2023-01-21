@@ -1,43 +1,43 @@
+import React, { useState } from "react"
+
+//useState() method(hook) in functional  component
 function App() {
-  return (
-    <div>
-      <h1>This is heading</h1>
-      <p>This is paragraph</p>
-    </div>
-  )
-
+      let [counter, updateCounter] = useState(0)
+      return (
+            <>
+                  <h1>Counter Value :{counter}</h1>
+                  <button onClick={() => {
+                        updateCounter(++counter)
+                  }}>Change</button>
+            </>
+      )
 }
 
-/*Using Arrow function
+/*State in Class component
 
-let App = () =>
+class App extends React.Component {
+      st = {
+            counter: 0
+      }
+      render() {
+            return (
+                  <>
+                        <h1>Counter Value :{this.st.counter}</h1>
+                        <button onClick={() => {
+                              this.setState({
+                                    counter: this.st.counter + 1
+                              })
+                        }}>Change</button>
+                  </>
+            )
 
-  <div>
-    <h1>This is heading</h1>
-    <p>This is paragraph</p>
-  </div>
+      }
 
-*/
-
-
-/*Using Anonymous function
-
-let App = function () {
-  return (
-    <div>
-      <h1>This is heading</h1>
-      <p>This is paragraph</p>
-    </div>
-  )
-}
-*/
-
-
-
-
-
-
-
-
+} */
 
 export default App
+
+
+
+
+
