@@ -1,39 +1,50 @@
-import React, { useState } from "react"
-
-//useState() method(hook) in functional  component
-function App() {
-      let [counter, updateCounter] = useState(0)
-      return (
-            <>
-                  <h1>Counter Value :{counter}</h1>
-                  <button onClick={() => {
-                        updateCounter(++counter)
-                  }}>Change</button>
-            </>
-      )
-}
-
-/*State in Class component
+import React from "react"
 
 class App extends React.Component {
-      st = {
-            counter: 0
+
+
+
+      constructor() {
+            super();
+            this.updatePrice = this.updatePrice.bind(this);
+            this.state = {
+                  product: "Real me 8 pro",
+                  price: 20000
+            }
       }
+
       render() {
             return (
                   <>
-                        <h1>Counter Value :{this.st.counter}</h1>
-                        <button onClick={() => {
-                              this.setState({
-                                    counter: this.st.counter + 1
-                              })
-                        }}>Change</button>
+                        <h1>Product:{this.state.product}</h1>
+                        <p>Price:{this.state.price}</p>
+
+                        <input id='price' type='number' />
+                        <button onClick={this.updatePrice}>Update</button>
                   </>
             )
 
       }
 
-} */
+
+      updatePrice() {
+
+            let p = document.getElementById('price').value;
+
+            this.setState({
+                  price: p
+
+            }, () => {
+                  console.log(this.state);
+            })
+
+
+      }
+
+
+
+
+}
 
 export default App
 
