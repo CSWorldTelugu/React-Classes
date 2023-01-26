@@ -1,45 +1,44 @@
-import React from "react"
+import React, { useState } from "react"
 
-class App extends React.Component {
-
-
-
-      constructor() {
-            super();
-            this.updatePrice = this.updatePrice.bind(this);
-            this.state = {
-                  product: "Real me 8 pro",
-                  price: 20000
-            }
-      }
-
-      render() {
-            return (
-                  <>
-                        <h1>Product:{this.state.product}</h1>
-                        <p>Price:{this.state.price}</p>
-
-                        <input id='price' type='number' />
-                        <button onClick={this.updatePrice}>Update</button>
-                  </>
-            )
-
-      }
+function App() {
 
 
-      updatePrice() {
-
-            let p = document.getElementById('price').value;
-
-            this.setState({
-                  price: p
-
-            }, () => {
-                  console.log(this.state);
-            })
 
 
-      }
+
+      let [product, updateProduct] = useState({
+            pname: 'Real me 10 pro',
+            price: 16000
+      })
+
+
+
+
+      return (
+            <>
+                  <h1>Product:{product.pname}</h1>
+                  <p>Price:{product.price}</p>
+                  <h1>Product:{JSON.stringify(product)}</h1>
+
+
+
+
+                  <input id='pname' />
+                  <button onClick={() => {
+
+                        let mprice = document.getElementById('pname').value;
+                        updateProduct({
+
+                              ...product,
+                              price: mprice
+                        })
+
+                  }}>Update</button>
+
+            </>
+      )
+
+
 
 
 
