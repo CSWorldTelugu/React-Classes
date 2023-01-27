@@ -1,53 +1,18 @@
-import React, { useState } from "react"
+import './App.css'
 
 function App() {
-
-
-
-
-
-      let [product, updateProduct] = useState({
-            pname: 'Real me 10 pro',
-            price: 16000
-      })
-
-
-
-
       return (
-            <>
-                  <h1>Product:{product.pname}</h1>
-                  <p>Price:{product.price}</p>
-                  <h1>Product:{JSON.stringify(product)}</h1>
+            <div className="Wrapper">
+                  <h1>Back ground color changer</h1>
+                  <input type='color' onChange={
+                        (e) => {
+                              document.body.style.background = e.target.value
 
 
-
-
-                  <input id='pname' />
-                  <button onClick={() => {
-
-                        let mprice = document.getElementById('pname').value;
-                        updateProduct({
-
-                              ...product,
-                              price: mprice
-                        })
-
-                  }}>Update</button>
-
-            </>
+                        }
+                  } />
+            </div>
       )
-
-
-
-
-
-
 }
 
 export default App
-
-
-
-
-
