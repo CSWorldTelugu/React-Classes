@@ -1,18 +1,38 @@
+import { useState } from 'react'
 import './App.css'
 
+
+
 function App() {
+
+      let [counter, setCounter] = useState(0);
+
+      let stock = 10;
+
       return (
-            <div className="Wrapper">
-                  <h1>Back ground color changer</h1>
-                  <input type='color' onChange={
-                        (e) => {
-                              document.body.style.background = e.target.value
+            <>
+                  <h1>Counter App in React</h1>
+                  <div className="Wrapper">
+                        <button className='minus' disabled={counter === 0} onClick={() => {
+                              if (counter > 0) {
+                                    setCounter(counter - 1)
+                              }
+                        }}>-</button>
+                        <p className='counter'>{counter}</p>
+                        <button className='plus' disabled={counter === stock}
+                              onClick={() => {
+                                    if (counter < stock) {
+                                          setCounter(counter + 1)
+                                    }
+                              }}
+                        >+</button>
+                  </div>
 
+            </>
 
-                        }
-                  } />
-            </div>
       )
+
+
 }
 
 export default App
