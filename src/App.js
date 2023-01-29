@@ -1,38 +1,21 @@
-import { useState } from 'react'
-import './App.css'
+import Product from "./Product"
 
 
 
 function App() {
 
-      let [counter, setCounter] = useState(0);
+      let prod1 = {
+            id: 1,
+            name: "Lenovo Think Pad",
+            aprice: 120000,
+            dprice: 100000
 
-      let stock = 10;
-
+      }
       return (
-            <>
-                  <h1>Counter App in React</h1>
-                  <div className="Wrapper">
-                        <button className='minus' disabled={counter === 0} onClick={() => {
-                              if (counter > 0) {
-                                    setCounter(counter - 1)
-                              }
-                        }}>-</button>
-                        <p className='counter'>{counter}</p>
-                        <button className='plus' disabled={counter === stock}
-                              onClick={() => {
-                                    if (counter < stock) {
-                                          setCounter(counter + 1)
-                                    }
-                              }}
-                        >+</button>
-                  </div>
-
-            </>
-
+            <Product {...prod1} />
       )
-
-
 }
+
+
 
 export default App
